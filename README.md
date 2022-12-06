@@ -1,16 +1,17 @@
-# nike_snkrs_clone
+# Nike SNKRS Clone
+A [SNKRS](https://www.nike.com/de/snkrs-app) clone for iOS and Android written in Dart and Flutter.
 
-A new Flutter project.
+## Features
+- Email & Password Authentication
+- A screen for the feed, items in stock and upcoming items 
+- A screen to explore items, styles and the people behind
+- A notifications screen
+- A screen for the profile and settings
 
-## Getting Started
+## Tech Used
+**Server**: Firebase Auth, Firebase Storage, Firebase Firestore
 
-This project is a starting point for a Flutter application.
+**Client**: Flutter, Bloc
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Feedback
+If you have any feedback, please reach out to me at heitzmnn@gmail.com
