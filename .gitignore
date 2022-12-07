@@ -49,3 +49,5 @@ macos/
 windows/
 web/
 test/
+
+ios/Runner/GoogleService-Info.plist
