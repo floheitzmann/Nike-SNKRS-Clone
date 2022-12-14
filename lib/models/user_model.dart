@@ -7,6 +7,8 @@ class UserModel {
   String? lastName;
   String? dateOfBirth;
   String? gender;
+  String? region;
+  bool isVerified;
 
   UserModel({
     required this.userId,
@@ -15,6 +17,8 @@ class UserModel {
     this.lastName,
     this.dateOfBirth,
     this.gender,
+    this.region,
+    this.isVerified = false,
   });
 
   Map<String, dynamic> toMap() {
@@ -24,6 +28,8 @@ class UserModel {
       "lastName": lastName,
       "dateOfBirth": dateOfBirth,
       "gender": gender,
+      "region": region,
+      "isVerified": isVerified,
     };
   }
 
@@ -33,16 +39,19 @@ class UserModel {
         firstName = doc.data()!["firstName"],
         lastName = doc.data()!["lastName"],
         dateOfBirth = doc.data()!["dateOfBirth"],
-        gender = doc.data()!["gender"];
+        gender = doc.data()!["gender"],
+        region = doc.data()!["region"],
+        isVerified = doc.data()!["isVerified"];
 
-  UserModel copyWith({
-    String? userId,
-    String? email,
-    String? firstName,
-    String? lastName,
-    String? dateOfBirth,
-    String? gender,
-  }) {
+  UserModel copyWith(
+      {String? userId,
+      String? email,
+      String? firstName,
+      String? lastName,
+      String? dateOfBirth,
+      String? gender,
+      String? region,
+      bool? isVerified}) {
     return UserModel(
       userId: userId ?? this.userId,
       email: email ?? this.email,
@@ -50,6 +59,8 @@ class UserModel {
       lastName: lastName ?? this.lastName,
       dateOfBirth: dateOfBirth ?? this.dateOfBirth,
       gender: gender ?? this.gender,
+      region: region ?? this.region,
+      isVerified: isVerified ?? this.isVerified,
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nike_snkrs_clone/features/form-validation/sign_up_view.dart';
 
 class WelcomeView extends StatefulWidget {
   WelcomeView({super.key});
@@ -244,7 +245,28 @@ class _WelcomeViewState extends State<WelcomeView> {
                   SizedBox(width: size.width * 0.03),
                   Flexible(
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        showModalBottomSheet(
+                          context: context,
+                          isScrollControlled: true,
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                              top: Radius.circular(30),
+                            ),
+                          ),
+                          builder: (context) => DraggableScrollableSheet(
+                            expand: false,
+                            initialChildSize: 0.92,
+                            maxChildSize: 0.92,
+                            minChildSize: 0.5,
+                            builder: (context, scrollController) =>
+                                SingleChildScrollView(
+                              controller: scrollController,
+                              child: const SignUpView(),
+                            ),
+                          ),
+                        );
+                      },
                       style: ButtonStyle(
                         elevation: MaterialStateProperty.resolveWith(
                           (states) => 0,

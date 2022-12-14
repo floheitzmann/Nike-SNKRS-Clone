@@ -7,6 +7,7 @@ import 'package:nike_snkrs_clone/features/authentication/authentication_reposito
 import 'package:nike_snkrs_clone/features/authentication/bloc/authentication_bloc.dart';
 import 'package:nike_snkrs_clone/features/database/bloc/database_bloc.dart';
 import 'package:nike_snkrs_clone/features/database/database_repository_impl.dart';
+import 'package:nike_snkrs_clone/features/form-validation/bloc/form_bloc.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,6 +22,12 @@ Future<void> main() async {
           create: (context) =>
               AuthenticationBloc(AuthenticationRepositoryImpl())
                 ..add(AuthenticationStarted()),
+        ),
+        BlocProvider(
+          create: (context) => FormBloc(
+            AuthenticationRepositoryImpl(),
+            DatabaseRepositoryImpl(),
+          ),
         ),
         BlocProvider(
           create: (context) => DatabaseBloc(DatabaseRepositoryImpl()),

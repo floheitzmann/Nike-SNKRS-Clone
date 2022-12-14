@@ -45,6 +45,10 @@ dependencies:
   firebase_core: ^2.3.0
   cloud_firestore: ^4.1.0
 
+  intl: ^0.17.0
+
+  country: ^2.0.3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -76,6 +80,7 @@ flutter:
     - assets/welcome-page-slot-2.png
     - assets/welcome-page-slot-3.png
     - assets/welcome-page-slot-4.png
+    - assets/swoosh-logo-dark.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
